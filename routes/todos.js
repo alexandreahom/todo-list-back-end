@@ -6,7 +6,7 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 
-router.post('/',todosCtrl.create)
+router.post('/', todosCtrl.create)
 
 /*---------- Protected Routes ----------*/
 

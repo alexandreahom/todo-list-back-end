@@ -1,7 +1,8 @@
 import { Todo } from '../models/todo.js'
+
 export function create (req,res){
   // req.body.owner = req.user.profile
-  // console.log(req.body.owner,"*******")
+  console.log(req.body.user,"*******")
   Todo.create(req.body)
   .then(todo =>{
     Todo.findById(todo._id)
