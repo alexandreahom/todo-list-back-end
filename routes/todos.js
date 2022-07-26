@@ -6,11 +6,13 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 router.get('/',todosCtrl.index)
-router.post('/:id', todosCtrl.create)
-router.post('/:id', todosCtrl.show)
-router.post('/:id', todosCtrl.update)
 
 
 /*---------- Protected Routes ----------*/
+router.use(decodeUserFromToken)
+router.post('/:id',checkAuth, todosCtrl.create)
+router.post('/:id',checkAuth, todosCtrl.show)
+router.delete('/deleted/:id',checkAuth, todosCtrl.deleted)
+
 
 export { router }
